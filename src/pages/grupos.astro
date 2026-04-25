@@ -1,0 +1,25 @@
+---
+import MainLayout from '@/layouts/MainLayout.astro';
+import Container from '@/components/ui/Container.astro';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+import GroupFilterGrid from '@/components/data-display/GroupFilterGrid';
+import { gruposTrabajo } from '@/data/grupos';
+---
+
+<MainLayout
+  title="Grupos de trabajo | AV Guárico 1"
+  description="Visualiza equipos técnicos, funciones, áreas de instalación y personal por zona para cada asamblea."
+>
+  <section class="py-10 sm:py-16">
+    <Container>
+      <SectionHeader
+        eyebrow="Operaciones Técnicas"
+        title="Estructura Operativa"
+        description="Filtra y visualiza la asignación de Capitanes, Auxiliares y Equipos para las secciones de Audio, Video y Plataforma del circuito."
+      />
+      <div class="mt-4">
+        <GroupFilterGrid grupos={gruposTrabajo} client:load />
+      </div>
+    </Container>
+  </section>
+</MainLayout>

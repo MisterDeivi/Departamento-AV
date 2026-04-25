@@ -1,0 +1,31 @@
+---
+import Container from '@/components/ui/Container.astro';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+
+const links = [
+  { label: 'Grupos de trabajo', href: '/grupos' },
+  { label: 'Organigramas tecnicos', href: '/organigramas' },
+  { label: 'Eventos importantes', href: '/eventos' },
+  { label: 'Guias de instalacion', href: '/guias' },
+];
+---
+
+<section class="py-12 sm:py-16 md:py-24 bg-gradient-to-b from-transparent to-black/[0.02]">
+  <Container>
+    <SectionHeader
+      eyebrow="Acceso rápido"
+      title="Navegación directa"
+      description="Herramientas clave al alcance inmediato para una gestión eficiente, diseñada para velocidad operativa."
+    />
+    <div class="grid gap-4 sm:grid-cols-2">
+      {links.map((link) => (
+        <a href={link.href} class="surface-glass rounded-[1.5rem] p-6 text-base font-bold text-[color:var(--brand-gray)] transition-all duration-300 hover:border-[color:var(--brand-green)]/30 hover:bg-white hover:pl-8 flex items-center justify-between group">
+          {link.label}
+          <div class="opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 w-8 h-8 rounded-full bg-[color:var(--brand-green)]/10 text-[color:var(--brand-green)] flex items-center justify-center">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </Container>
+</section>

@@ -1,0 +1,35 @@
+---
+import Card from '@/components/ui/Card.astro';
+import Badge from '@/components/ui/Badge.astro';
+import type { EventItem } from '@/lib/types';
+import { formatFecha } from '@/lib/format';
+
+export interface Props {
+  evento: EventItem;
+}
+
+const { evento } = Astro.props;
+---
+
+<Card className="h-full">
+  <div class="flex items-start justify-between gap-4 mb-2">
+    <h3 class="text-xl font-extrabold text-[color:var(--brand-gray)] tracking-tight leading-tight">{evento.titulo}</h3>
+    <Badge label={evento.tipo} />
+  </div>
+  
+  <div class="flex flex-col gap-3 mt-4">
+    <div class="flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-green)] bg-[color:var(--brand-green)]/10 w-fit px-3 py-1.5 rounded-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      {formatFecha(evento.fechaISO)}
+    </div>
+    
+    <p class="text-sm text-[color:var(--text-soft)] flex gap-2 items-start">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5 text-[color:var(--brand-gray)]"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      {evento.lugar}
+    </p>
+    
+    <p class="text-sm text-[color:var(--text-soft)] leading-relaxed mt-2 p-3 bg-[color:var(--bg-main)] rounded-xl border border-[color:var(--stroke)] shadow-inner">
+      {evento.detalle}
+    </p>
+  </div>
+</Card>

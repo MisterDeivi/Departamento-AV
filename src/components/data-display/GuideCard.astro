@@ -1,0 +1,30 @@
+---
+import Card from '@/components/ui/Card.astro';
+import Badge from '@/components/ui/Badge.astro';
+import type { GuideItem } from '@/lib/types';
+
+export interface Props {
+  guia: GuideItem;
+}
+
+const { guia } = Astro.props;
+---
+
+<Card className="h-full">
+  <div class="mb-5 flex items-start justify-between gap-4">
+    <h3 class="text-xl font-extrabold text-[color:var(--brand-gray)] tracking-tight leading-tight">{guia.titulo}</h3>
+    <Badge label={guia.categoria} />
+  </div>
+  
+  <p class="text-sm text-[color:var(--text-soft)] leading-relaxed flex-1">
+    {guia.descripcion}
+  </p>
+  
+  <a
+    href={guia.href}
+    class="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-br from-[color:var(--brand-green-soft)] to-[color:var(--brand-green)] px-5 py-3 text-sm font-bold text-white transition-all hover:opacity-90 hover:shadow-lg shadow-md hover:-translate-y-0.5 group w-full sm:w-auto"
+  >
+    Abrir guía operativa
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </a>
+</Card>

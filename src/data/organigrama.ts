@@ -1,0 +1,67 @@
+import type { OrganigramaNode } from '@/lib/types';
+
+export const organigramaTecnico: OrganigramaNode[] = [
+  {
+    id: 'coord_general',
+    titulo: 'Coordinacion General AV',
+    responsable: 'Evelyn Arcia',
+    descripcion: 'Define lineamientos tecnicos y agenda operativa.',
+    area: 'Organizacion',
+  },
+  {
+    id: 'cap_audio',
+    titulo: 'Capitania de Audio',
+    responsable: 'Carlos Mendez',
+    descripcion: 'Gestion de equipos, consola y estandar de mezcla.',
+    area: 'Audio',
+    reportaA: 'coord_general',
+  },
+  {
+    id: 'cap_video',
+    titulo: 'Capitania de Video',
+    responsable: 'Maria Fernanda Leon',
+    descripcion: 'Supervisa camaras, switcher y continuidad visual.',
+    area: 'Video',
+    reportaA: 'coord_general',
+  },
+  {
+    id: 'cap_plataforma',
+    titulo: 'Capitanía de Plataforma',
+    responsable: 'Por asignar',
+    descripcion: 'Coordina la plataforma, micrófonos, atriles y flujo de oradores.',
+    area: 'Plataforma',
+    reportaA: 'coord_general',
+  },
+  {
+    id: 'aux_audio',
+    titulo: 'Auxiliar de Audio',
+    responsable: 'Jesus Acosta',
+    descripcion: 'Soporte de microfonia, monitoreo y pruebas.',
+    area: 'Audio',
+    reportaA: 'cap_audio',
+  },
+  {
+    id: 'aux_video',
+    titulo: 'Auxiliar de Video',
+    responsable: 'Andres Villegas',
+    descripcion: 'Soporte de transicion, streaming y graficas.',
+    area: 'Video',
+    reportaA: 'cap_video',
+  },
+  {
+    id: 'aux_plataforma',
+    titulo: 'Auxiliar de Plataforma',
+    responsable: 'Por asignar',
+    descripcion: 'Apoyo en ajustes de plataforma y asistencia a participantes.',
+    area: 'Plataforma',
+    reportaA: 'cap_plataforma',
+  },
+  {
+    id: 'equipos',
+    titulo: 'Equipos Operativos',
+    responsable: 'Capitanes por zona',
+    descripcion: 'Ejecucion en campo durante asambleas y eventos.',
+    area: 'Organizacion',
+    reportaA: 'coord_general',
+  },
+];

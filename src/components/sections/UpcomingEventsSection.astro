@@ -1,0 +1,22 @@
+---
+import Container from '@/components/ui/Container.astro';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+import EventCard from '@/components/data-display/EventCard.astro';
+import { eventos } from '@/data/eventos';
+import { sortEventosProximos } from '@/lib/format';
+
+const proximos = sortEventosProximos(eventos).slice(0, 3);
+---
+
+<section class="py-8 sm:py-10">
+  <Container>
+    <SectionHeader
+      eyebrow="Agenda"
+      title="Proximos eventos"
+      description="Prioridad en fechas cercanas para facilitar planificacion y despliegue tecnico."
+    />
+    <div class="grid gap-4 lg:grid-cols-3">
+      {proximos.map((evento) => <EventCard evento={evento} />)}
+    </div>
+  </Container>
+</section>

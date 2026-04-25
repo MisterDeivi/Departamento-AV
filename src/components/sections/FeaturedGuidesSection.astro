@@ -1,0 +1,19 @@
+---
+import Container from '@/components/ui/Container.astro';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+import GuideCard from '@/components/data-display/GuideCard.astro';
+import { guias } from '@/data/guias';
+---
+
+<section class="py-8 sm:py-12">
+  <Container>
+    <SectionHeader
+      eyebrow="Guias"
+      title="Instalacion y operacion tecnica"
+      description="Acceso inmediato a guias de audio y video para ejecucion estandar."
+    />
+    <div class="grid gap-4 md:grid-cols-2">
+      {guias.map((guia) => <GuideCard guia={guia} />)}
+    </div>
+  </Container>
+</section>

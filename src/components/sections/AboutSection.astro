@@ -1,0 +1,46 @@
+---
+import Container from '@/components/ui/Container.astro';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+---
+
+<section class="py-12 sm:py-16 relative bg-white dark:bg-gray-900 border-y border-gray-100 dark:border-white/5">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div>
+        <SectionHeader
+          eyebrow="Propósito"
+          title="Acerca del departamento"
+          align="left"
+        />
+        <div class="mt-8 space-y-6 text-base sm:text-lg text-gray-600 dark:text-gray-300">
+          <p>
+            El departamento de Audio y Video tiene como sencilla labor <strong>instalar y configurar el equipo audiovisual</strong> para las Asambleas Cristianas, prestando mucha atención para que todo el sistema funcione bien durante el programa.
+          </p>
+          <p>
+            Nos alegra poder aportar nuestro granito de arena, ya que gracias a la ayuda de Jehová y a la colaboración entre todos, estos medios permiten que los asistentes disfruten de los discursos y el contenido multimedia enfocado en la enseñanza bíblica.
+          </p>
+          <p>
+            Nos esforzamos al máximo por darle siempre lo mejor a Jehová, y estamos dispuestos a hacer más de lo que exige nuestra labor. Por eso hacemos nuestra la enseñanza de Jesús registrada en <strong>Mateo 5:41</strong>, con la fuerte convicción de que si nos piden ir una milla... ¡RECORREMOS UNA MÁS!
+          </p>
+          <div class="mt-6 flex items-center gap-4 border-l-4 border-[color:var(--brand-green)] bg-green-50 dark:bg-green-900/10 p-4 rounded-r-2xl">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[color:var(--brand-green)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">
+              Dirección organizativa
+              <span class="block text-xs font-normal text-gray-600 dark:text-gray-400 mt-1">Este departamento está dirigido por un superintendente y sus auxiliares designados.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative group mx-auto w-full max-w-md lg:max-w-full">
+         <div class="absolute -inset-1 bg-gradient-to-r from-[color:var(--brand-green)] to-blue-600 rounded-3xl blur opacity-25 transition duration-1000 group-hover:opacity-40 group-hover:duration-200 hidden sm:block"></div>
+         <div class="relative overflow-hidden rounded-3xl bg-white dark:bg-gray-800 shadow-xl border border-gray-100 dark:border-white/10">
+            <img src="/images/about.webp" alt="Equipo de asamblea trabajando" class="w-full h-[300px] sm:h-[400px] object-cover transition-transform duration-700 hover:scale-105" />
+            <div class="absolute inset-0 border border-white/20 rounded-3xl pointer-events-none"></div>
+         </div>
+      </div>
+    </div>
+  </Container>
+</section>

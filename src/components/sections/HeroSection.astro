@@ -1,0 +1,58 @@
+---
+import HeroMedia from '@/components/sections/HeroMedia.astro';
+---
+
+<section class="relative h-[100vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden selection:bg-[color:var(--brand-green)] selection:text-white">
+  {/* Background Media */}
+  <div class="absolute inset-0 z-0">
+    <HeroMedia mediaType="video" src="/hero-timelapse.mp4" poster="" overlayOpacity={0.75} />
+  </div>
+
+  {/* Content Overlay */}
+  <div class="relative z-10 text-center px-4 sm:px-6 w-full mx-auto flex flex-col items-center justify-center">
+    
+    {/* Main Headline */}
+    <h1 class="text-[3rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[8rem] font-black tracking-tighter text-white drop-shadow-2xl opacity-0 animate-[fadeInUp_1.4s_cubic-bezier(0.16,1,0.3,1)_0.2s_forwards] leading-[1.05]">
+      Departamento de <br class="hidden sm:block" />
+      <span class="text-transparent bg-clip-text bg-gradient-to-br from-[color:var(--brand-green)] to-[color:var(--brand-green-soft)] filter drop-shadow-lg">
+        Audio y Video
+      </span>
+    </h1>
+
+    {/* Location / Tagline */}
+    <div class="mt-8 sm:mt-12 flex items-center gap-4 sm:gap-6 opacity-0 animate-[fadeIn_1.5s_cubic-bezier(0.16,1,0.3,1)_0.8s_forwards]">
+      <div class="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-[color:var(--brand-green)]"></div>
+      <p class="text-lg sm:text-2xl md:text-3xl text-white/90 font-semibold tracking-[0.4em] sm:tracking-[0.5em] uppercase drop-shadow-md">
+        Guárico 1
+      </p>
+      <div class="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-[color:var(--brand-green)]"></div>
+    </div>
+
+  </div>
+
+  {/* Scroll Indicator */}
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-0 animate-[fadeIn_1s_ease-in_2s_forwards] flex flex-col items-center gap-3 z-20">
+    <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-white/80 font-bold drop-shadow-md">Descubrir</span>
+    <div class="w-[24px] h-[40px] sm:w-[30px] sm:h-[48px] rounded-full border border-white/40 flex justify-center p-1.5 backdrop-blur-md bg-black/10">
+      <div class="w-1.5 h-2.5 sm:h-3 bg-[color:var(--brand-green)] rounded-full animate-[bounce_2s_infinite]"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(60px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>

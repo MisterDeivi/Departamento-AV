@@ -1,0 +1,27 @@
+---
+import Badge from '@/components/ui/Badge.astro';
+import Card from '@/components/ui/Card.astro';
+import type { WorkGroup } from '@/lib/types';
+
+export interface Props {
+  grupo: WorkGroup;
+}
+
+const { grupo } = Astro.props;
+---
+
+<Card className="h-full">
+  <div class="mb-4 flex items-center justify-between">
+    <h3 class="text-lg font-semibold text-[color:var(--brand-gray)]">{grupo.equipo}</h3>
+    <Badge label={grupo.area} />
+  </div>
+  <p class="text-sm text-[color:var(--text-soft)]"><strong class="text-[color:var(--brand-gray)]">Capitan:</strong> {grupo.capitan}</p>
+  <p class="mt-2 text-sm text-[color:var(--text-soft)]"><strong class="text-[color:var(--brand-gray)]">Zona:</strong> {grupo.zona}</p>
+  <p class="mt-2 text-sm text-[color:var(--text-soft)]"><strong class="text-[color:var(--brand-gray)]">Funcion:</strong> {grupo.funcion}</p>
+  <div class="mt-4">
+    <p class="mb-2 text-xs uppercase tracking-[0.14em] text-[color:var(--text-soft)]">Integrantes</p>
+    <ul class="space-y-1 text-sm text-[color:var(--text-soft)]">
+      {grupo.integrantes.map((nombre) => <li>{nombre}</li>)}
+    </ul>
+  </div>
+</Card>

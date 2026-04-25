@@ -1,0 +1,38 @@
+---
+export interface Props {
+  mediaType?: 'video' | 'image';
+  src?: string;
+  poster?: string;
+  overlayOpacity?: number;
+}
+
+const {
+  mediaType = 'image',
+  src = '',
+  poster = '',
+  overlayOpacity = 0.72,
+} = Astro.props;
+
+const hasMedia = Boolean(src);
+---
+
+<div class="absolute inset-0 overflow-hidden">
+  {hasMedia && mediaType === 'video' ? (
+    <video
+      class="h-full w-full object-cover"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="none"
+      poster={poster}
+    >
+      <source src={src} type="video/mp4" />
+    </video>
+  ) : hasMedia ? (
+    <img src={src} alt="Fondo visual del departamento" class="h-full w-full object-cover" loading="lazy" />
+  ) : (
+    <div class="animated-placeholder" aria-hidden="true"></div>
+  )}
+  <div class="hero-overlay" style={`opacity: ${overlayOpacity};`}></div>
+</div>
